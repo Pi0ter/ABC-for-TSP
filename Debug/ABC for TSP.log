@@ -1,0 +1,35 @@
+﻿  ABC for TSP.cpp
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\ABC for TSP.cpp(124,23): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\ABC for TSP.cpp(129,23): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\ABC for TSP.cpp(130,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\ABC for TSP.cpp(161,23): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\ABC for TSP.cpp(180,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\ABC for TSP.cpp(208,16): warning C4244: "inicjowanie": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\ABC for TSP.cpp(210,23): warning C4244: "inicjowanie": konwersja z "_Rep" do "unsigned int", możliwa utrata danych
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\ABC for TSP.cpp(279,19): warning C4244: "inicjowanie": konwersja z "_Rep" do "unsigned int", możliwa utrata danych
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\ABC for TSP.cpp(331,46): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\ABC for TSP.cpp(339,85): warning C4244: "argument": konwersja z "int" do "const _Ty", możliwa utrata danych
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\ABC for TSP.cpp(340,96): warning C4244: "argument": konwersja z "double" do "const _Ty", możliwa utrata danych
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\ABC for TSP.cpp(362,21): warning C4244: "inicjowanie": konwersja z "_Ty" do "int", możliwa utrata danych
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\ABC for TSP.cpp(407,36): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+  ABC for TSP.vcxproj -> C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\Debug\ABC for TSP.exe

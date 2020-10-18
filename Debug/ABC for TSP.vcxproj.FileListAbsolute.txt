@@ -1,0 +1,2 @@
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\Debug\ABC for TSP.exe
+C:\Users\ImDea\OneDrive\Pulpit\Praca Inżynierska\First steps\ABC for TSP\Debug\ABC for TSP.pdb
