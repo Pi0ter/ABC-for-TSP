@@ -1,2 +1,2 @@
-# ABC-for-TSP
-Artifficial Bee Colony solution for Traveling Salesman Problem  [Praca inżynierska]
+### ABC implementation of TSP 
+Artificial Bee Colony implementation of Traveling Salesman Problem
