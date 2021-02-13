@@ -1,7 +1,4 @@
-﻿// ABC for TSP.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
-//
-
-#include <iostream>
+﻿#include <iostream>
 #include <fstream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,7 +7,6 @@
 #include <vector>
 #include <random>
 #include <chrono>
-
 
 using namespace std;
 
@@ -53,27 +49,31 @@ void infoPszczola(Bee a);
 /**
 Prawdopodobnie do struktury lub tabeli struktur
 */
-void wczytywaniePunktow() {    
-    std::ifstream plik("eil101.txt");
+void wczytywaniePunktow(std::string a) {   
+    float x = 0, y = 0, d = 0;
+    std::fstream plik("/ali535.txt",ios::in);
+   
     if (!plik) {
-        cout << endl << "Brak pliku";
+        std::cout << std::endl << "Brak pliku";
         throw("Brak pliku");
+        return;
     }
-    float x, y,d;
-
-    while (plik >>d>> x >> y) {
-        Punkt tempPunkt;
-        tempPunkt.X = x;
-        tempPunkt.Y = y;
-        punkty.push_back(tempPunkt);
+   
+    if (plik.is_open()) {
+        while (plik >>d>> x >> y) {
+            std::cout << std::endl << d;
+            Punkt tempPunkt;
+            tempPunkt.X = x;
+            tempPunkt.Y = y;
+            punkty.push_back(tempPunkt);
+        }
     }
-
 
     //test
     for (auto x : punkty) {
         cout << x.X << " " << x.Y << endl;
     }
-
+    plik.close();
 }
 
 /**
@@ -201,7 +201,7 @@ void podzialRoju() {
     lZbier = floor(lZbier * liczbaPszczol);
     //cout <<endl<< lZbier << " " << lZwiad;
     for (int i = 0; i < lZwiad; i++) {
-        pszczoly[i].rola = 'O'; //Onlooker / Zwiadowca 
+        pszczoly[i].rola = 'O'; 
         //cout << endl << pszczoly[i].rola;
     }
 
@@ -226,9 +226,7 @@ vector<int> mutujSciezke(Bee *a) {
     int temp = 0;
     int numerPunktuDoZamiany = 0;
     numerPunktuDoZamiany = distrib(mt);
-    /*if (numerPunktuDoZamiany > 4) {
-        throw("XD");
-    }*/
+  
     vector<int> zmutowana;
 
     for (auto x : a->trasa) {
@@ -258,16 +256,13 @@ void zwiad(Bee *a) {
         a->trasa = zmutowana;
         a->dystans = nowaDlugosc;
         a->iterator = 0;
-
     }
     else {
         if (a->iterator >= limitIteracji) {
             a->rola = 'S';
-
         }
         else {
-            a->iterator++ ;
- 
+            a->iterator++;
         }
     }
 }
@@ -279,10 +274,9 @@ void szukajNowejSciezki(Bee a){
     unsigned seed = chrono::system_clock::now().time_since_epoch().count();
     shuffle(a.trasa.begin(), a.trasa.end(), default_random_engine(seed));
     a.dystans = dlugoscSciezki(a.trasa);
-    a.iterator = 0;
-    //cout << "szukaj i zerowanie";
+    a.iterator = 0;    
     a.rola = 'F';
-    //cout << "{}";
+    
 }
 
 /**
@@ -326,7 +320,7 @@ void taniec(){
             if (najkrotszaDroga > pszczoly[i].dystans) {
 
                 //najlepszeRozwiazanie = pszczoly[i].trasa;
-               najlepszeRozwiazanie  =  kopiujNajlepszaTrase(pszczoly[i]);
+                najlepszeRozwiazanie  =  kopiujNajlepszaTrase(pszczoly[i]);
 
                 najkrotszaDroga = pszczoly[i].dystans;
 
@@ -335,28 +329,21 @@ void taniec(){
             }
 
             dotychczasoweRozwiazania.push_back(vector<float>(0));
-
             dotychczasoweRozwiazania[dotychczasoweRozwiazania.size() - 1].push_back(i);            
-            dotychczasoweRozwiazania[dotychczasoweRozwiazania.size() - 1].push_back(pszczoly[i].dystans);
-            
+            dotychczasoweRozwiazania[dotychczasoweRozwiazania.size() - 1].push_back(pszczoly[i].dystans);            
         
         }
         else {
             if (pszczoly[i].rola == 'S') {
-                szukajNowejSciezki(pszczoly[i]);
-                
+                szukajNowejSciezki(pszczoly[i]);                
             }
-        }
-        
-    }
-    
+        }        
+    }    
 
     sort(dotychczasoweRozwiazania.begin(), dotychczasoweRozwiazania.end(), sortowanie);
 
     float lSkautow = (float)procentSkautow / 100;
-    lSkautow = floor(lSkautow * dotychczasoweRozwiazania.size());
-    
-    
+    lSkautow = floor(lSkautow * dotychczasoweRozwiazania.size());       
     
     for (int i = 0; i < (int)lSkautow; i++) {
         int idPszcz = dotychczasoweRozwiazania[i][0];
@@ -389,11 +376,6 @@ void wezwanieDoNajlepszegoRozwiazania(vector<Bee> pszczoly) {
         if (x.rola == 'O') {
             //x.trasa = najlepszeRozwiazanie;
             x.trasa = kopiujTrase(najlepszeRozwiazanie);
-
-
-            
-            
-
             x.trasa = mutujSciezke(&x);
             x.dystans = dlugoscSciezki(x.trasa);
             if (x.dystans < dlugoscSciezki(najlepszeRozwiazanie)) {
@@ -410,8 +392,6 @@ void wezwanieDoNajlepszegoRozwiazania(vector<Bee> pszczoly) {
         }        
 
     }
-
-
 }
 
 
@@ -426,26 +406,25 @@ void infoPszczola(Bee a) {
 
 int main()
 {
-    procentZbieraczy = 50; // w % 
-    procentZwiadowcow = 50; 
+    std::string nazwaPliku= "bier127.txt";
+
+
+    procentZbieraczy = 30; // w % 
+    procentZwiadowcow = 70; 
     procentSkautow = 20;
 
     limitIteracji = 100; // Limit mutacji trasy dla pojedyńczej pszczoły
     cykle = 500;        // Limit cykli algorytmu 
 
 
-
     int iloscPszczol = 1000;
 
 
     clock_t czasInicjacji = clock();
-    wczytywaniePunktow();
+    wczytywaniePunktow(nazwaPliku);
     poszczegolneDystanse();
     wypiszPunktyIDystanse();
     czasInicjacji = clock() - czasInicjacji;
-
-
-
 
     cout<< endl << "  Inicjacja zajela: "<< (float)czasInicjacji/CLOCKS_PER_SEC<<" sekund"<<
         endl<<"Czesc wlasciwa: " << endl << endl;
@@ -458,14 +437,6 @@ int main()
     //wypiszTrasyroju();
     for (int i = 0; i < cykle; i++) {
         taniec();
-
-       /* cout << endl << "n >";
-        for (auto x : najlepszeRozwiazanie) {
-            cout << " " << x;
-        }
-        cout << endl;*/
-
-
         wezwanieDoNajlepszegoRozwiazania(pszczoly);
         cout << ".";
     }
@@ -500,14 +471,3 @@ int main()
     //cout<<endl<<dlugoscSciezki(pszczoly[1]);
     
 }
-
-// Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
-// Debugowanie programu: F5 lub menu Debugowanie > Rozpocznij debugowanie
-
-// Porady dotyczące rozpoczynania pracy:
-//   1. Użyj okna Eksploratora rozwiązań, aby dodać pliki i zarządzać nimi
-//   2. Użyj okna programu Team Explorer, aby nawiązać połączenie z kontrolą źródła
-//   3. Użyj okna Dane wyjściowe, aby sprawdzić dane wyjściowe kompilacji i inne komunikaty
-//   4. Użyj okna Lista błędów, aby zobaczyć błędy
-//   5. Wybierz pozycję Projekt > Dodaj nowy element, aby utworzyć nowe pliki kodu, lub wybierz pozycję Projekt > Dodaj istniejący element, aby dodać istniejące pliku kodu do projektu
-//   6. Aby w przyszłości ponownie otworzyć ten projekt, przejdź do pozycji Plik > Otwórz > Projekt i wybierz plik sln

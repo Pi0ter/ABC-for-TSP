@@ -1,0 +1,2 @@
+C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\x64\Debug\ABC for TSP.exe
+C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\x64\Debug\ABC for TSP.pdb

@@ -1,0 +1,37 @@
+﻿  ABC for TSP.cpp
+C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\ABC for TSP.cpp(97,38): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
+C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\ABC for TSP.cpp(193,40): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
+C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\ABC for TSP.cpp(205,16): warning C4244: "inicjowanie": konwersja z "float" do "int", możliwa utrata danych
+C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\ABC for TSP.cpp(207,23): warning C4244: "inicjowanie": konwersja z "_Rep" do "unsigned int", możliwa utrata danych
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\ABC for TSP.cpp(221,64): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\ABC for TSP.cpp(271,19): warning C4244: "inicjowanie": konwersja z "_Rep" do "unsigned int", możliwa utrata danych
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\ABC for TSP.cpp(322,46): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\ABC for TSP.cpp(329,85): warning C4244: "argument": konwersja z "int" do "const _Ty", możliwa utrata danych
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\ABC for TSP.cpp(330,96): warning C4244: "argument": konwersja z "double" do "const _Ty", możliwa utrata danych
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\ABC for TSP.cpp(346,21): warning C4244: "inicjowanie": konwersja z "_Ty" do "int", możliwa utrata danych
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\ABC for TSP.cpp(386,36): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+  ABC for TSP.vcxproj -> C:\Users\ImDea\OneDrive\Pulpit\Github\ProgramowanieGrafiki\ABC-for-TSP\x64\Debug\ABC for TSP.exe
